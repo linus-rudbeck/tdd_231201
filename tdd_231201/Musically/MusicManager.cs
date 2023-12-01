@@ -29,5 +29,18 @@ namespace tdd_231201.Musically
         }
 
 
+        public void RemoveSongFromPlaylist(int songId)
+        {
+            _playlist.RemoveSong(songId);
+        }
+
+        internal string PlayCurrentSong()
+        {
+            var currentSong = _playlist.GetCurrentSong();
+
+            _playlist.RemoveSong(currentSong.Id);
+
+            return currentSong.Title;
+        }
     }
 }

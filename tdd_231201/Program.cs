@@ -1,19 +1,33 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using tdd_231201.Musically;
 
-// var wrapped2023 = new Playlist()
+// Setup
+var playlist = new InMemoryPlaylist();
+var musicManager = new MusicManager(playlist);
 
-// var mm1 = new MusicManager(wrapped2023)
+// Create songs
+var inferno = new Song(1, "Inferno");
+var sandstorm = new Song(2, "Sandstorm");
 
-// Spela massa musik
-// mm1.AddSong()
-// mm1.PlaySongs()
-// mm1.StopSongs()
+// Add to playlist
+musicManager.AddSongToPlaylist(inferno);
+musicManager.AddSongToPlaylist(sandstorm);
 
-// Senare...
+// Play all songs
 
-// var mm2 = new MusicManager(playlist)
-
-// Spela massa musik
-// mm2.PlaySongs()
-
+try
+{
+    for (int i = 1; i < 10; i++)
+    {
+        var title = musicManager.PlayCurrentSong();
+        Console.WriteLine($"{i}. {title}");
+    }
+}
+catch (PlaylistEmptyException)
+{
+    Console.WriteLine("Spellistan är tom");
+}
+catch (Exception)
+{
+    Console.WriteLine("Nu gick nåt riktigt snett");
+}

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace tdd_231201.Classes
+namespace tdd_231201.Utilities
 {
-    internal class Calculator
+    internal class Calculator : ICalculator
     {
-        public static int Add(int a, int b)
+        public int Add(int a, int b)
         {
             return a + b;
         }

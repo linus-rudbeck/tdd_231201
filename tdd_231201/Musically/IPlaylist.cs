@@ -9,5 +9,9 @@ namespace tdd_231201.Musically
     public interface IPlaylist
     {
         void AddSong(Song song);
+
+        void RemoveSong(int songId);
+
+        Song GetCurrentSong();
     }
 }

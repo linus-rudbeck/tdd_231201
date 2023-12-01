@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace tdd_231201.Musically
 {
-    public class Song(int id, string title)
+    public class PlaylistEmptyException() 
+        : Exception("The playlist is empty")
     {
-        public int Id { get; set; } = id;
-        public string Title { get; set; } = title;
     }
 }
