@@ -14,7 +14,6 @@ musicManager.AddSongToPlaylist(inferno);
 musicManager.AddSongToPlaylist(sandstorm);
 
 // Play all songs
-
 try
 {
     for (int i = 1; i < 10; i++)
@@ -26,8 +25,4 @@ try
 catch (PlaylistEmptyException)
 {
     Console.WriteLine("Spellistan är tom");
-}
-catch (Exception)
-{
-    Console.WriteLine("Nu gick nåt riktigt snett");
 }
