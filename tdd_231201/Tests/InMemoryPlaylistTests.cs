@@ -56,5 +56,20 @@ namespace tdd_231201.Tests
             // Assert
             Assert.Throws<PlaylistEmptyException>(() => inMemoryPlaylist.GetCurrentSong());
         }
+
+        [Test]
+        public void TestGetCurrentSong_WhenNotEmpty_ReturnSong()
+        {
+            // Arrange
+            var inMemoryPlaylist = new InMemoryPlaylist();
+            var song = new Song(1, "Inferno");
+            inMemoryPlaylist.AddSong(song);
+
+            // Act
+            var result = inMemoryPlaylist.GetCurrentSong();
+
+            // Assert
+            Assert.That(result, Is.EqualTo(song));
+        }
     }
 }
